@@ -85,12 +85,39 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de registro. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+			<form action="register" method="GET" class="register-form">
+                <div class="form-reg">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-reg">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                </div>
+                
+                <div class="form-reg">
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña" required>
+                </div>
+                
+                <div class="form-reg">
+                    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                </div>
+                
+                <div class="form-reg">
+                    <label for="documento">Número de Documento:</label>
+                    <input type="number" id="documento" name="documento" required>
+                </div>
+                
+                <div class="form-reg">
+                    <label for="foto">Foto de Perfil:</label>
+                    <input type="text" id="foto" name="foto">
+                </div>
+                
+                <button type="submit">Registrarse</button>
+            </form>
 
 
 	<!-- footer -->
