@@ -11,7 +11,7 @@ const data = {
   
     productos: [
       {
-        id: 1,
+        id: "1",
         nombre: "Zapatillas Adidas Run",
         descripcion: "Zapatillas deportivas para correr.",
         imagen: "/images/products/adidas-run.jpg",
