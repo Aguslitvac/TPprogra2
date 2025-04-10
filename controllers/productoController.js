@@ -18,7 +18,12 @@ var productController = {
         res.render('product-add', {
             usuario: data.usuario
         })
-    }
+    },
+    productos: function (req, res) {
+        res.render("products", {
+          productos: data.productos,
+        });
+      },
 }
 
 module.exports = productController
