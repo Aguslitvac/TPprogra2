@@ -29,17 +29,20 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
+			<h2 class="col-12">Agregar productos</h2>
 
 				<form action="/product/add" method="GET">
 					<p>
-					  Imagen: <input type="file" name="imagen">
+					  Imagen: <input type="file" name="imagen" required>
 					</p>
 					<p>
-					  Nombre del producto: <input type="text" name="nombre">
+					  Nombre del producto: <input type="text" name="nombre" required>
 					</p>
 					<p>
-					  Descripción: <input type="text" name="descripcion">
+					  Descripción: <input type="text" name="descripcion" required>
+					</p>
+					<p>
+						<button type="submit">Agregar Producto</button>
 					</p>
 				  </form>
 
