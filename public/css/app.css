@@ -476,6 +476,30 @@ textarea.form-input {
   color: #fff;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Títulos: h1, h2, etc */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+
+}
+
+/* Hipervínculos destacados */
+a {
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #003366;
+}
+
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
