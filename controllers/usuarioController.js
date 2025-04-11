@@ -11,7 +11,8 @@ var usuarioController = {
 
   profile: function (req, res) {
     const usuario = data.usuario;
-    res.render("profile", { usuario });
+    const productos = data.productos
+    res.render("profile", { usuario, productos });
   },
 };
 
