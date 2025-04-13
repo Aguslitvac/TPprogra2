@@ -4,7 +4,7 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --yellow: #e56f3d;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -154,7 +154,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/banner_db.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -487,6 +487,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 700;
+  color: var(--yellow);
 
 }
 
@@ -552,3 +553,4 @@ a:hover {
     margin: auto;
   }
 }
+
