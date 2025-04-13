@@ -63,14 +63,14 @@ const data = {
         id: "8",
         nombre: "Set de Figuras Dragon Ball Z",
         descripcion: "Colección de mini figuras de personajes icónicos.",
-        imagen: "/images/products/81ODsk7A9-L.AC_SL1500.jpg",
+        imagen: "/images/products/figuritas.jpg",
         comentarios: []
       },
       {
         id: "9",
         nombre: "Taza Dragon Ball Z",
         descripcion: "Taza con ilustraciones de Gokú en diferentes formas.",
-        imagen: "/images/products/61tjPJxZnyL.AC_UF894,1000_QL80.jpg",
+        imagen: "/images/products/taza.jpg",
         comentarios: []
       },
       {
