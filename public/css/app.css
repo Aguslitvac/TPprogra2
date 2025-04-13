@@ -1,5 +1,6 @@
 /*====== Fonts ======*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap');
 
 
 /*====== Variables ======*/
@@ -10,7 +11,7 @@
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: 'Chewy', sans-serif
 }
 
 
@@ -29,7 +30,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: orange;
 }
 
 ul,
@@ -68,7 +69,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: red;
 }
 
 .main-header_home-link,
@@ -171,15 +172,17 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
+  color: white;
 }
 
 .product-box {
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255);
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
   margin: 20px 0;
+  color: rgb(226, 10, 10);
+  align-items: center;
 }
 
 .product-box a {
@@ -477,15 +480,15 @@ textarea.form-input {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  color: #333;
+  font-family: 'Chewy', cursive;
+  color: #eae2e2;
   margin: 0;
   padding: 0;
 }
 
 /* Títulos: h1, h2, etc */
 h1, h2, h3, h4, h5, h6 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Baloo 2', sans-serif;
   font-weight: 700;
 
 }
@@ -499,6 +502,11 @@ a {
 a:hover {
   color: #003366;
 }
+
+footer p{
+  color: black;
+}
+
 
 
 /*====== Media-Queries ======*/
@@ -551,4 +559,5 @@ a:hover {
     width: 95%;
     margin: auto;
   }
+
 }
