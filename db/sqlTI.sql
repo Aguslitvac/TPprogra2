@@ -1,3 +1,4 @@
+create schema TPProg2
 create table usuarios (
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 email  VARCHAR(255) NOT NULL UNIQUE,
@@ -87,13 +88,4 @@ values("Buena calida", 1, 1),
 ("Buena calida", 3, 10),
 ("Buena calida", 4, 10),
 ("Buena calida", 5, 10);
-
-
-
-
-
-
-
-
-
  

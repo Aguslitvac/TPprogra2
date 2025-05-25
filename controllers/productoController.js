@@ -1,18 +1,21 @@
 let data = require('../db/index')
+let db = require("../database/models")
 
 var productController = {
     detalleProducto: function (req, res) {
         let producto = {} 
         
-        for (let i = 0; i < data.productos.length; i++) {
-           
-            if (data.productos[i].id == req.params.id) {
-                producto = data.productos[i]
-            }
-            
-        }
+        db.Producto.findOne({
+            where: {id: req.params.id}
+
+        })
+        .then(function (data) {
+            res.send(data)
+            res.render('product', {producto})
+        })
+
+
         
-        res.render('product', {producto})
     },
     agregarProducto: function (req, res) {
         res.render('product-add', {
