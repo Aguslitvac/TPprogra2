@@ -14,7 +14,7 @@ const data = {
         id: "1",
         nombre: "Buzo Dragon Ball Z",
         descripcion: "Buzo con diseño de Gokú y Vegeta estilo retro.",
-        imagen: "/images/products/SUNTH3636LL.jpeg",
+        imagen: "/images/products/buzo.jpg",
         comentarios: [
           {
             nombre: "Agustina",
@@ -24,7 +24,7 @@ const data = {
           {
             nombre: "Gonzalo",
             texto: "Gran producto",
-            imagen: "/images/users/gonzalo.jpeg"
+            imagen: "/images/users/federico.jpeg"
           }
         ]
       },
@@ -32,7 +32,7 @@ const data = {
         id: "2",
         nombre: "Juego Dragon Ball Z Kakarot (PS4)",
         descripcion: "Revive la historia de Gokú en este juego de acción-RPG.",
-        imagen: "/images/products/productos_300x400_1631915582-dragon-ball-z-kakarot-ps4.jpg",
+        imagen: "/images/products/juego.jpg",
         comentarios: [
           {
             nombre: "Ana",
@@ -50,7 +50,7 @@ const data = {
         id: "3",
         nombre: "Portamerienda Gokú",
         descripcion: "Mochila pequeña con diseño infantil de Gokú.",
-        imagen: "/images/products/portameriendas-goku-dragon-ball-super.jpg",
+        imagen: "/images/products/portamerienda.jpg",
         comentarios: [
           {
             nombre: "Juan",
@@ -68,7 +68,7 @@ const data = {
         id: "4",
         nombre: "Llavero Gokú Chibi",
         descripcion: "Llavero de goma con diseño adorable de Gokú niño.",
-        imagen: "/images/products/Llavero-Goku-Dragon-Ball-Z-key-chain-merchandising.webp",
+        imagen: "/images/products/llavero.jpg",
         comentarios: [
           {
             nombre: "Micaela",
@@ -86,7 +86,7 @@ const data = {
         id: "5",
         nombre: "Gaseosas Ocean Bomb Dragon Ball",
         descripcion: "Bebidas coleccionables con personajes de Dragon Ball.",
-        imagen: "/images/products/images.jpeg",
+        imagen: "/images/products/gaseosas.jpg",
         comentarios: [
           {
             nombre: "Maria",
@@ -104,7 +104,7 @@ const data = {
         id: "6",
         nombre: "Caramelos Esfera del Dragón",
         descripcion: "Dulces en envase con forma de esfera del dragón.",
-        imagen: "/images/products/CANDY-DB-ESFERA_3_resultado.png",
+        imagen: "/images/products/caramelos.jpg",
         comentarios: [
           {
             nombre: "Ana",
@@ -122,7 +122,7 @@ const data = {
         id: "7",
         nombre: "Manga Dragon Ball Color: Saga Saiyajin Vol. 2",
         descripcion: "Versión a color del manga clásico de Akira Toriyama.",
-        imagen: "/images/products/886e74170ef44791b30c57a8ea646351.jpg",
+        imagen: "/images/products/manga.jpg",
         comentarios: [{
           nombre: "Juan",
           texto: "Muy buena calida",
@@ -138,7 +138,7 @@ const data = {
         id: "8",
         nombre: "Set de Figuras Dragon Ball Z",
         descripcion: "Colección de mini figuras de personajes icónicos.",
-        imagen: "/images/products/figuritas.jpg",
+        imagen: "/images/products/setdefiguras.jpg",
         comentarios: [{
           nombre: "Agustina",
           texto: "Muy buena calida",
@@ -170,7 +170,7 @@ const data = {
         id: "10",
         nombre: "Figura de Acción Gokú Super Saiyajin",
         descripcion: "Figura detallada de Gokú transformado en Super Saiyajin.",
-        imagen: "/images/products/618n7XQzlML.jpg",
+        imagen: "/images/products/figuradeaccion.jpg",
         comentarios: [{
           nombre: "Agustina",
           texto: "Muy buena calida",

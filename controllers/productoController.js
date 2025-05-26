@@ -24,7 +24,15 @@ var productController = {
             usuario: data.usuario
         })
     },
-    
+
+    crearProducto: function (req, res) {
+    db.Producto.create({
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion,
+        imagen: req.body.imagen,
+        usuario_id: req.session.usuarioLogueado.id 
+    })
+    }
 }
 
 module.exports = productController
