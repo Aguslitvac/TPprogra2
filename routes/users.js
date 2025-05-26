@@ -8,7 +8,7 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/register", usuarioController.registro);
-
+router.post('/register', usuarioController.nuevoUsuario);
 router.get("/login", usuarioController.login);
 
 router.get("/profile", usuarioController.profile);
