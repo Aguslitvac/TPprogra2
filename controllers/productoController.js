@@ -3,15 +3,17 @@ let db = require("../database/models")
 
 var productController = {
     detalleProducto: function (req, res) {
-        let producto = {} 
         
         db.Producto.findOne({
-            where: {id: req.params.id}
+            where: {id: req.params.id},
+            include: [{association: "usuario"}, {association: "comentarios", include: [{association: "usuario"}]} 
+            ]
+
 
         })
         .then(function (data) {
-            res.send(data)
-            res.render('product', {producto})
+            // res.send(data) 
+            res.render('product', {producto: data})
         })
 
 
