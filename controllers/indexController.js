@@ -1,4 +1,4 @@
-let data = require("../db/index");
+let db = require("../database/models");
 
 let indexController = {
     home: function(req, res){
@@ -12,6 +12,8 @@ let indexController = {
     }, 
 
 }
+
+
 
 
 module.exports = indexController;

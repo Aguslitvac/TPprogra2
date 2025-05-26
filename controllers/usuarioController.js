@@ -9,6 +9,11 @@ var usuarioController = {
 
   login: function (req, res) {
     res.render("login");
+
+    if (req.session.usuario) {
+  return res.redirect('/users/profile');
+}
+
   },
 
   profile: function (req, res) {
@@ -34,6 +39,9 @@ var usuarioController = {
   res.redirect('/users/login')
 })
   },
+
+
+  
 };
 
 module.exports = usuarioController;

@@ -9,6 +9,12 @@ module.exports = function (Sequelize, DataTypes) {
             autoIncrement: true,
             type: DataTypes.INTEGER.UNSIGNED
         },
+
+        nombre_usuario: {
+            notNull: true,
+            type: DataTypes.STRING,
+        },
+
         email: {
             notNull: true,
             unique: true,
