@@ -1,19 +1,19 @@
 let data = require("../db/index");
+let db = require("../database/models")
 
 var usuarioController = {
-  registro: function (req, res) {
-    res.render("register");
-  },
-
-  login: function (req, res) {
-    res.render("login");
-  },
-
-  profile: function (req, res) {
-    const usuario = data.usuario;
-    const productos = data.productos
-    res.render("profile", { usuario, productos });
-  },
+  perfil: function (req, res) {
+      db.Usuario.findOne({
+          where: { id: req.params.id },
+          include: [{ association: "productos" }]
+      })
+      .then(function (usuario) {
+          res.render("profile", { usuario: usuario });
+      })
+      .catch(function (error) {
+          res.send(error);
+      });
+  }
 };
 
 module.exports = usuarioController;

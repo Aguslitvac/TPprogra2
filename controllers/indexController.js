@@ -1,17 +1,19 @@
 let data = require("../db/index");
+let db = require("../database/models")
 
-let indexController = {
-    home: function(req, res){
-        const productos = data.productos
-        res.render("index", {productos})    
-    }, 
-
-    search: function(req, res){
-        const productos = data.productos
-        res.render("search-results", {productos})    
-    }, 
-
-}
+var indexController = {
+    index: function (req, res) {
+        db.Producto.findAll({
+            include: [{ association: "usuario" }]
+        })
+        .then(function (productos) {
+            res.render("index", { productos: productos });
+        })
+        .catch(function (error) {
+            res.send(error);
+        });
+    }
+};
 
 
 module.exports = indexController;
