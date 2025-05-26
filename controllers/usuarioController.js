@@ -12,9 +12,14 @@ var usuarioController = {
   },
 
   profile: function (req, res) {
-    const usuario = data.usuario;
-    const productos = data.productos
-    res.render("profile", { usuario, productos });
+    db.Usuario.findOne({
+      where:{id: req.params.id},
+      include: [{association: "productos"}]
+    })
+    .then(function(usuario){
+      res.render("profile", {usuario: usuario});
+    })
+    
   },
 
   nuevoUsuario: function (req, res) {

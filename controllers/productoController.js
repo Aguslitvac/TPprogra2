@@ -1,6 +1,3 @@
-lproductocontroller
-
-
 let data = require('../db/index')
 let db = require("../database/models")
 
