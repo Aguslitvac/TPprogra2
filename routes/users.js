@@ -10,7 +10,7 @@ router.get("/", function (req, res, next) {
 router.get("/register", usuarioController.registro);
 router.post('/register', usuarioController.nuevoUsuario);
 router.get("/login", usuarioController.login);
-
+router.post("/login", usuarioController.loginSession);
 router.get("/profile/:id", usuarioController.profile);
 
 

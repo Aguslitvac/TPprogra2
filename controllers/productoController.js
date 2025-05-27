@@ -23,6 +23,7 @@ var productController = {
         res.render('product-add', {
             usuario: data.usuario
         })
+        
     },
 
     crearProducto: function (req, res) {
