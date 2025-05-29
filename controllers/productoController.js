@@ -32,6 +32,7 @@ var productController = {
         descripcion: req.body.descripcion,
         imagen: req.body.imagen,
         usuario_id: req.session.usuarioLogueado.id 
+        
     })
     }
 }

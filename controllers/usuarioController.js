@@ -21,7 +21,7 @@ var usuarioController = {
       include: [{ association: "productos", include: [{ association: "comentarios" }] }, { association: "comentarios" }]
     })
       .then(function (usuario) {
-        // res.send (usuario)
+        //res.send (usuario)
 
         res.render("profile", { usuario: usuario });
       })
