@@ -1,10 +1,11 @@
 let data = require("../db/index");
 let db = require('../database/models');
-let bcrypt = require('bcryptjs')
+let bcrypt = require('bcryptjs');
+const { where } = require("sequelize");
 
 var usuarioController = {
   registro: function (req, res) {
-    res.render("register");
+    res.render("register", {error: ""});
   },
 
   login: function (req, res) {
@@ -29,16 +30,38 @@ var usuarioController = {
   },
 
   nuevoUsuario: function (req, res) {
-    db.Usuario.create({
-      email: req.body.email,
-      pass: bcrypt.hashSync(req.body.contraseña, 10),
-      fecha: req.body.fecha_nacimiento,
-      dni: req.body.documento,
-      foto: req.body.foto
-    })
-      .then(function () {
-        res.redirect('/users/login')
+    if (req.body.email.length==0){
+      return res.render ("register",{error:"no puede estar el email vacio"}) 
+      
+    }
+    else if (req.body.contraseña.length <=3){
+      return res.render ("register",{error:"la contraseña debe tener al menos 3 caracteres"})
+    }else{
+
+      db.Usuario.findOne({
+        where:{email: req.body.email}
       })
+      .then (function(user){
+        if (user){
+          return res.render ("register",{error:"ya existe un usuario con ese email"})
+        } else{
+          console.log("todo ok")
+          db.Usuario.create({
+            email: req.body.email,
+            pass: bcrypt.hashSync(req.body.contraseña, 10),
+            fecha: req.body.fecha_nacimiento,
+            dni: req.body.documento,
+            foto: req.body.foto
+          })
+            .then(function () {
+              res.redirect('/users/login')
+            })
+        }
+      })
+
+    }
+    
+    
   },
 
   loginSession: function (req, res) {
@@ -50,14 +73,16 @@ var usuarioController = {
 
       .then(function (data) {
         if (data) {
-          console.log("El usuario existe")
+          
           if (bcrypt.compareSync(req.body.contra, data.pass)){
-            console.log ("La contrasena es correcta")
+            
             
             if (req.body.recordarme){
-              console.log ("guardo en la cookie")
+            res.cookie('usuarioLogueado', data,{ maxAge: 1000 * 60 * 5 });
+
             }
-            res.send ("Guardo los datos en la session")
+            req.session.usuarioLogueado= data
+            res.redirect ("/")
           }
           else{
             res.send ("La contrasena es incorrecta")

@@ -594,3 +594,8 @@ footer p{
   }
 }
 
+.error{
+  font-size: 24px;
+  color: red;
+}
+

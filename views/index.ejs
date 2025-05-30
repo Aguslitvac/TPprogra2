@@ -4,7 +4,12 @@
 <%- include('./partials/head') %>
 <body>
 	<!-- Header -->
-	<%- include('./partials/header') %>
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado')%>
+	<% } else { %>
+		<%- include('header')%>
+	<% } %>
+	
 	<!-- /Header -->
 	
 	<!-- Banner -->
