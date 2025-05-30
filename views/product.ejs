@@ -4,8 +4,12 @@
 <%- include('./partials/head') %>
 <body>
 	<!-- Header -->
-	<%- include('./partials/header') %>
-	<!-- /Header -->
+<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado')%>
+	<% } else { %>
+		<%- include('./partials/header')%>
+	<% } %>
+		<!-- /Header -->
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
@@ -21,6 +25,7 @@
 					<img src="/images/products/<%= producto.imagen %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= producto.descripcion %></p>
+						<a href="/users/profile/<%= producto.usuario.id %>"><%= producto.usuario.email %></a>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
@@ -29,7 +34,7 @@
 								<img src="/images/users/<%=producto.comentarios[i].usuario.foto%>" alt="">
 								<div class="data">
 									<p class="user">
-									<strong> <a href="/users/profile"> <%= producto.comentarios[i].nombre %> </a> </strong>
+									<strong> <a href="/users/profile/<%=producto.comentarios[i].usuario.id%>"> <%= producto.comentarios[i].usuario.email %> </a> </strong>
 									<%= producto.comentarios[i].texto %></p>
 								</div>
 							</article>
@@ -39,10 +44,16 @@
 
 
 					</section>
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+<% if (locals.user != undefined) { %>
+		<form class="form" action="/products/comentar/<%= producto.id %>" method="POST">
+						<input class="form-input" name="comentario" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
+	<% } else { %>
+		<p>Para comentar tenes que estar logueado</p>
+	<% } %>
+
+					
 					<hr>
 				</div>
 			</div>

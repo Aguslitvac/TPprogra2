@@ -20,9 +20,14 @@ var productController = {
         
     },
     agregarProducto: function (req, res) {
-        res.render('product-add', {
-            usuario: data.usuario
-        })
+       
+         if(req.session.usuarioLogueado){
+            res.render('product-add')
+      
+    }
+    else{
+      res.redirect("/")
+    }
         
     },
 
@@ -31,10 +36,23 @@ var productController = {
         nombre: req.body.nombre,
         descripcion: req.body.descripcion,
         imagen: req.body.imagen,
-        usuario_id: req.session.usuarioLogueado.id 
+        FK_userid: req.session.usuarioLogueado.id 
+
         
     })
-    }
+    res.redirect("/users/profile/" + req.session.usuarioLogueado.id)
+    },
+
+    comentar: function (req, res) {
+    db.Comentario.create({
+        texto: req.body.comentario,
+        FK_userid: req.session.usuarioLogueado.id,
+        FK_productoid: req.params.id 
+
+        
+    })
+    res.redirect("/products/producto/" + req.params.id)
+    },
 }
 
 module.exports = productController

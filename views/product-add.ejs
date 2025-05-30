@@ -6,9 +6,11 @@
 
 <body>
 	<!-- Header -->
-	
-	<%- include('partials/headerLogueado', { usuario }) %>
-	<!-- /Header -->
+<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado')%>
+	<% } else { %>
+		<%- include('./partials/header')%>
+	<% } %>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -19,9 +21,9 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">Agregar productos</h2>
 
-				<form action="/product/add" method="GET">
+				<form action="/products/add" method="POST">
 					<p>
-					  Imagen: <input type="file" name="imagen" required>
+					  Imagen: <input type="text" name="imagen" required>
 					</p>
 					<p>
 					  Nombre del producto: <input type="text" name="nombre" required>

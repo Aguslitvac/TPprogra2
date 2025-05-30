@@ -14,7 +14,7 @@ let indexController = {
   search: function (req, res) {
     db.Producto.findAll({
       where: {
-        nombre: { [op.like]: req.query.search },
+        nombre: { [op.like]: `%${req.query.search}%`},
       },
 
       include: [{ association: "usuario" }, { association: "comentarios" }],

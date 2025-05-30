@@ -5,14 +5,24 @@ const { where } = require("sequelize");
 
 var usuarioController = {
   registro: function (req, res) {
-    res.render("register", {error: ""});
+    
+    if(req.session.usuarioLogueado){
+      res.redirect("/")
+      
+    }
+    else{
+      res.render("register", {error: ""});
+    }
   },
 
   login: function (req, res) {
-    res.render("login");
 
-    if (req.session.usuario) {
-      return res.redirect('/users/profile');
+     if(req.session.usuarioLogueado){
+      res.redirect("/")
+      
+    }
+    else{
+      res.render("login", {error: ""});
     }
 
   },
@@ -98,6 +108,15 @@ var usuarioController = {
 
 
 
+  },
+
+  logout: function (req, res){
+    req.session.destroy()
+    if(req.cookies.usuarioLogueado != undefined){
+      res.clearCookie("usuarioLogueado")
+      
+    }
+    res.redirect("/")
   }
 
 
