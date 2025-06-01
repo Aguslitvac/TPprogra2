@@ -36,7 +36,9 @@
 					Recordarme
 				  </label>
 				
-				
+				  <% if (error.length > 0) { %>
+                    <p class="error"><%= error %></p>
+				<% } %>
 
 				  
             </form>

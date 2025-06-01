@@ -74,49 +74,41 @@ var usuarioController = {
     
   },
 
-  loginSession: function (req, res) {
+  loginUsuario: function (req, res) {
+    let email = req.body.email
+    let contraseña = req.body.contraseña
 
-    // res.send(req.body)
-    db.Usuario.findOne({
-      where: { email: req.body.email }
-    })
+    if (!email) {
+      return res.render("login", { error: "El email no puede estar vacío" });
+    }
 
-      .then(function (data) {
-        if (data) {
-          
-          if (bcrypt.compareSync(req.body.contra, data.pass)){
-            
-            
-            if (req.body.recordarme){
-            res.cookie('usuarioLogueado', data,{ maxAge: 1000 * 60 * 5 });
+    if (!contraseña) {
+      return res.render("login", { error: "La contraseña no puede estar vacía" });
+    }
 
-            }
-            req.session.usuarioLogueado= data
-            res.redirect ("/")
-          }
-          else{
-            res.send ("La contrasena es incorrecta")
-          }
+    db.Usuario.findOne({ where: { email: email } })
+      .then(function (user) {
+        if (!user) {
+          return res.render("login", { error: "No existe un usuario con ese email" });
         }
 
-        else {
-          res.send("El usuario no existe")
+        if (bcrypt.compareSync(contraseña, user.pass)) {
+          req.session.usuarioLogueado = user;
+
+          // Si marcó "recordarme", guardamos una cookie
+          if (req.body.recordarme) {
+            res.cookie('usuarioEmail', user.email, { maxAge: 1000 * 60 * 5 }); // 5 minutos
+          }
+
+          return res.redirect('/');
+        } else {
+          return res.render("login", { error: "La contraseña es incorrecta" });
         }
       })
-
-
-
-
-
-  },
-
-  logout: function (req, res){
-    req.session.destroy()
-    if(req.cookies.usuarioLogueado != undefined){
-      res.clearCookie("usuarioLogueado")
-      
-    }
-    res.redirect("/")
+      .catch(function (error) {
+        console.log(error);
+        return res.render("login", { error: "Ocurrió un error en el login" });
+      });
   }
 
 
