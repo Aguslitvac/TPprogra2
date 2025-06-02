@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": "root",
-    "database": "TPProg2",
+    "database": "tpprog2",
     "host": "127.0.0.1",
     "dialect": "mysql", 
     "port": 3306
