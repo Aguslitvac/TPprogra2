@@ -95,9 +95,9 @@ var usuarioController = {
         if (bcrypt.compareSync(contraseña, user.pass)) {
           req.session.usuarioLogueado = user;
 
-          // Si marcó "recordarme", guardamos una cookie
+          
           if (req.body.recordarme) {
-            res.cookie('usuarioEmail', user.email, { maxAge: 1000 * 60 * 5 }); // 5 minutos
+            res.cookie('usuarioEmail', user.email, { maxAge: 1000 * 60 * 5 }); 
           }
 
           return res.redirect('/');
