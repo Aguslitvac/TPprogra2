@@ -109,8 +109,15 @@ var usuarioController = {
         console.log(error);
         return res.render("login", { error: "Ocurrió un error en el login" });
       });
-  }
+  },
 
+  logout: function (req, res) {
+    req.session.destroy();
+  
+    res.clearCookie('usuarioEmail');
+  
+    return res.redirect('/users/login'); 
+  }
 
 
 };
