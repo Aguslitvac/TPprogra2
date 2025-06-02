@@ -28,13 +28,19 @@ app.use(session({
   saveUninitialized: true
 }));
 
-
+app.use(function (req, res, next) {
+  if (req.session.usuarioLogueado == undefined && req.cookies.usuario != undefined) {
+    req.session.usuarioLogueado = req.cookies.usuario
+  }
+    return next();
+});
 app.use(function(req, res, next) {
 	if (req.session.usuarioLogueado != undefined) {
 		res.locals.user = req.session.usuarioLogueado	
      }
 return next();
 });
+
 
 
 

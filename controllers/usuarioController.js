@@ -76,7 +76,7 @@ var usuarioController = {
 
   loginUsuario: function (req, res) {
     let email = req.body.email
-    let contraseña = req.body.contraseña
+    let contraseña = req.body.contra
 
     if (!email) {
       return res.render("login", { error: "El email no puede estar vacío" });
@@ -97,7 +97,7 @@ var usuarioController = {
 
           
           if (req.body.recordarme) {
-            res.cookie('usuarioEmail', user.email, { maxAge: 1000 * 60 * 5 }); 
+            res.cookie('usuario', user, { maxAge: 1000 * 60 * 5 }); 
           }
 
           return res.redirect('/');

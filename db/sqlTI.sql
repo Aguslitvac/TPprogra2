@@ -1,8 +1,9 @@
-create schema TPProg2
+create schema TPProg2;
+use TPProg2;
 create table usuarios (
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 email  VARCHAR(255) NOT NULL UNIQUE,
-pass VARCHAR(255) NOT NULL,
+pass VARCHAR(500) NOT NULL,
 fecha DATE NOT NULL,
 dni INT(8) UNSIGNED NOT NULL,
 foto VARCHAR(255) NOT NULL,

@@ -40,7 +40,10 @@ var productController = {
 
         
     })
-    res.redirect("/users/profile/" + req.session.usuarioLogueado.id)
+    .then(function () {
+        res.redirect("/users/profile/" + req.session.usuarioLogueado.id)
+    })
+   
     },
 
     comentar: function (req, res) {
@@ -51,7 +54,9 @@ var productController = {
 
         
     })
-    res.redirect("/products/producto/" + req.params.id)
+    .then(function () {
+        res.redirect("/products/producto/" + req.params.id)
+    })
     },
 }
 
